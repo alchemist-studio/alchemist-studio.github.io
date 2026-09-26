@@ -28,7 +28,8 @@ git clone https://github.com/alchemist-studio/alchemist-studio.github.io.git
 cd alchemist-studio.github.io
 ```
 
-Open `index.html` directly in your browser, or serve the repository locally.
+Opening `index.html` directly is enough for a quick preview. If your browser
+does not load local assets as expected, serve the repository locally instead.
 For example, with Python 3 installed:
 
 ```sh
@@ -68,15 +69,22 @@ Stop the server with `Ctrl+C`.
 
 Refresh the browser after saving changes. There is no compilation step.
 
+Theme selection applies to the current page view and returns to the default
+theme after a reload; the selected theme is not saved between visits.
+
 ## Before publishing
 
 The repository does not currently include an automated test suite.
 Use this manual checklist when reviewing changes:
 
 - [ ] Check desktop and mobile layouts for clipping or horizontal overflow.
+- [ ] Test in the browsers and versions relevant to your audience; this project
+  does not currently publish a formal browser-support matrix.
 - [ ] Switch between Oxide, Indigo, and Carbon.
 - [ ] Confirm the favicon changes with the selected theme.
 - [ ] Navigate links and theme controls using the keyboard.
+- [ ] Confirm theme controls have accessible names and that text and controls
+  remain readable in each palette.
 - [ ] Check reduced-motion and increased-contrast behavior.
 - [ ] Confirm the Showcase and Approach links point to the intended pages.
 - [ ] Check the browser console and network panel for errors or missing assets.
@@ -86,8 +94,11 @@ Use this manual checklist when reviewing changes:
 The site is served through GitHub Pages from the repository root on `main`.
 
 Changes pushed or merged into `main` are published without a local build
-step. After deployment finishes, check the live website to confirm the
-updated content and assets appear correctly.
+step. Check the repository's **Actions** tab for the Pages deployment workflow
+and wait for it to complete successfully. You can also check the Pages status
+under **Settings → Pages**. Then visit the live website to confirm the updated
+content and assets appear correctly; the published site may take a short time
+to reflect a completed deployment.
 
 ## Typography
 
